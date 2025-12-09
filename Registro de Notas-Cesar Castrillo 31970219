@@ -13,7 +13,7 @@ int main () {
         scanf("%d",&notas_estudiantes[i]);
         j=j+notas_estudiantes[i];
 
-    }
+    
 
 
     printf("Las notas de los estudiantes son:");
