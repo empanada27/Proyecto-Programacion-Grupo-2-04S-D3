@@ -41,5 +41,5 @@ int main () {
     }
      }
    printf("La nota maxima es: %d\n La nota mínima es: %d ",max,min);
-
+}
 
