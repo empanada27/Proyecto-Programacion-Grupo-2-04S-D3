@@ -21,4 +21,34 @@ void modificarStock(Producto inv[], int n, int aumentar);
 void buscar(Producto inv[], int n);
 void guardar(Producto inv[], int n);
 int cargar(Producto inv[]);
+
 float calcularValorTotal(Producto inv[], int n, int indice);
+
+// 2. Menu de usuario 
+
+int main() {
+    Producto inventario[MAX_PRODUCTOS];
+    int numProductos = cargar(inventario);
+    int opcion;
+
+    do {
+        printf("\n--- INVENTARIO CONVENIENCIA ---");
+        printf("\n1. Registrar producto\n2. Aumentar stock\n3. Disminuir stock");
+        printf("\n4. Buscar por nombre\n5. Valor total (Recursivo)\n6. Guardar y Salir");
+        printf("\nSeleccione: ");
+        scanf("%d", &opcion);
+
+        switch(opcion) {
+            case 1: registrar(inventario, &numProductos); break;
+            case 2: modificarStock(inventario, numProductos, 1); break;
+            case 3: modificarStock(inventario, numProductos, 0); break;
+            case 4: buscar(inventario, numProductos); break;
+            case 5: 
+                printf("\nValor total: $%.2f\n", calcularValorTotal(inventario, numProductos, 0)); 
+                break;
+            case 6: guardar(inventario, numProductos); break;
+        }
+    } while(opcion != 6);
+
+    return 0;
+}
