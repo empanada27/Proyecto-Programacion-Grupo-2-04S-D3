@@ -85,5 +85,18 @@ void modificarStock(Producto inv[], int n, int aumentar) {
     }
     printf("No encontrado.\n");
 }
+// 5. Buscar
+void buscar(Producto inv[], int n) {
+    char nombre[50];
+    printf("Nombre a buscar: ");
+    scanf("%s", nombre);
+    for(int i = 0; i < n; i++) {
+        if(strcmp(inv[i].nombre, nombre) == 0) {
+            printf("Producto: %s | Cantidad: %d | Precio: %.2f\n", inv[i].nombre, inv[i].cantidad, inv[i].precio);
+            return;
+        }
+    }
+    printf("No encontrado.\n");
+}
 
 
