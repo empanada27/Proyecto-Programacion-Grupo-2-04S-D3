@@ -49,6 +49,10 @@ int main() {
             case 6: guardar(inventario, numProductos); break;
         }
     } while(opcion != 6);
+
+    return 0;
+}
+
     // 3. Registrar
 void registrar(Producto inv[], int *n) {
     if (*n >= MAX_PRODUCTOS) {
@@ -64,6 +68,5 @@ void registrar(Producto inv[], int *n) {
     (*n)++;
 }
 
-    return 0;
-}
+
 
