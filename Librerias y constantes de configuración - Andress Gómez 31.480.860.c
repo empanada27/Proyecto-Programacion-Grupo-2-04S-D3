@@ -68,5 +68,22 @@ void registrar(Producto inv[], int *n) {
     (*n)++;
 }
 
+// 4. Modificar Stock
+void modificarStock(Producto inv[], int n, int aumentar) {
+    char nombre[50];
+    int cant;
+    printf("Nombre del producto: ");
+    scanf("%s", nombre);
+    for(int i = 0; i < n; i++) {
+        if(strcmp(inv[i].nombre, nombre) == 0) {
+            printf("Cantidad: ");
+            scanf("%d", &cant);
+            if(aumentar) inv[i].cantidad += cant;
+            else inv[i].cantidad -= cant;
+            return;
+        }
+    }
+    printf("No encontrado.\n");
+}
 
 
