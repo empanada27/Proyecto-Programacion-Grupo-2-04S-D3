@@ -49,6 +49,21 @@ int main() {
             case 6: guardar(inventario, numProductos); break;
         }
     } while(opcion != 6);
+    // 3. Registrar
+void registrar(Producto inv[], int *n) {
+    if (*n >= MAX_PRODUCTOS) {
+        printf("Inventario lleno.\n");
+        return;
+    }
+    printf("Nombre: ");
+    scanf("%s", inv[*n].nombre);
+    printf("Cantidad: ");
+    scanf("%d", &inv[*n].cantidad);
+    printf("Precio: ");
+    scanf("%f", &inv[*n].precio);
+    (*n)++;
+}
 
     return 0;
 }
+
