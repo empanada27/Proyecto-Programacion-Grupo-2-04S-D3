@@ -99,4 +99,23 @@ void buscar(Producto inv[], int n) {
     printf("No encontrado.\n");
 }
 
+// 6. Archivo (Guardar)
+void guardar(Producto inv[], int n) {
+    FILE *f = fopen(ARCHIVO, "wb");
+    if(f) {
+        fwrite(inv, sizeof(Producto), n, f);
+        fclose(f);
+        printf("Datos guardados.\n");
+    }
+}
+
+int cargar(Producto inv[]) {
+    FILE *f = fopen(ARCHIVO, "rb");
+    if(!f) return 0;
+    int n = fread(inv, sizeof(Producto), MAX_PRODUCTOS, f);
+    fclose(f);
+    return n;
+}
+
+
 
