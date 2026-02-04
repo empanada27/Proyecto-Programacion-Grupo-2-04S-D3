@@ -1,3 +1,4 @@
+//Herramienta de Gestión de Inventario
 // 1.Librerías y constantes de configuración 
 
 #include <stdio.h>
@@ -127,5 +128,6 @@ float calcularValorTotal(Producto inv[], int n, int indice) {
  float subtotal = inv[indice].cantidad * inv[indice].precio;
  return subtotal + calcularValorTotal(inv, n, indice + 1);
 }
+
 
 
