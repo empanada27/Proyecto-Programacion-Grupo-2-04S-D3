@@ -117,5 +117,15 @@ int cargar(Producto inv[]) {
     return n;
 }
 
+// 7. RECURSIVIDAD
+float calcularValorTotal(Producto inv[], int n, int indice) {
+ // Caso base: llegamos al final del arreglo
+ if (indice == n) {
+ return 0;
+ }
+ // Caso recursivo
+ float subtotal = inv[indice].cantidad * inv[indice].precio;
+ return subtotal + calcularValorTotal(inv, n, indice + 1);
+}
 
 
