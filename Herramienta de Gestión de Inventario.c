@@ -114,7 +114,7 @@ int cargar(Producto inv[]) {
     FILE *f = fopen(ARCHIVO, "rb");
     if(!f) return 0;
     int n = fread(inv, sizeof(Producto), MAX_PRODUCTOS, f);
-    fclose(f);
+    fclose(f)
     return n;
 }
 
